@@ -1,24 +1,26 @@
 public class selection
 {
-    public static void main(String... args)
+    public static void main(String[] args)
     {
-        int[] a = {7,8,3,1,2};
+        int[] a = {6,5,2,8,9,4};
+        int temp,min;
         for(int i = 0 ; i < a.length - 1 ; i++)
-        {
-            int smallest = i;
+        {   
+            min = i;
             for(int j = i + 1 ; j < a.length ; j++)
             {
-                if(a[smallest] > a[j])
+                if(a[min] > a[j])
                 {
-                    smallest = j;
+                    min = j;
                 }
             }
 
-            int temp = a[smallest];
-            a[smallest] = a[i];
+            temp = a[min];
+            a[min] = a[i];
             a[i] = temp;
         }
 
+        System.out.print("The array after sorting is : ");
         for(int i = 0 ; i < a.length ; i++)
         {
             System.out.print(a[i] + " ");
